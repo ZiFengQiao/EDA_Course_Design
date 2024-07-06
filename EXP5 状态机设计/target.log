@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  20 JUN 2024 09:43
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  29 JUN 2024 20:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -444,6 +444,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--115
 
 File: image/2024-06-19-18-06-00.png Graphic file (type bmp)
 <image/2024-06-19-18-06-00.png>
+File: image/2024-06-28-17-21-13.png Graphic file (type bmp)
+<image/2024-06-28-17-21-13.png>
 
 
 [2]
@@ -474,7 +476,7 @@ Package fontspec Info:
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 136.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 143.
 
 
 [3]
@@ -488,15 +490,15 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
 [7]
 
 [8]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.53937> on input line 449.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 449.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 449.
-
 
 [9]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.53937> on input line 456.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 456.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 456.
+
 
 [10]
 
@@ -536,50 +538,82 @@ File: image/2024-06-19-15-31-01.png Graphic file (type bmp)
 <image/2024-06-19-15-31-01.png>
 File: image/2024-06-19-17-08-24.png Graphic file (type bmp)
 <image/2024-06-19-17-08-24.png>
+
+
+[24]
 File: image/2024-06-19-14-07-53.png Graphic file (type bmp)
 <image/2024-06-19-14-07-53.png>
 
 
-[24]
+[25]
 File: image/2024-06-19-20-58-40.png Graphic file (type bmp)
 <image/2024-06-19-20-58-40.png>
 File: image/2024-06-19-21-00-32.png Graphic file (type bmp)
 <image/2024-06-19-21-00-32.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1207--1209
+Underfull \hbox (badness 10000) in paragraph at lines 1214--1216
 
  []
 
-File: image/2024-06-19-20-48-09.png Graphic file (type bmp)
-<image/2024-06-19-20-48-09.png>
+File: image/2024-06-20-09-45-50.png Graphic file (type bmp)
+<image/2024-06-20-09-45-50.png>
 
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1218
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1226
 
  []
 
+
+
+[26]
 File: image/2024-06-19-17-41-30.png Graphic file (type bmp)
 <image/2024-06-19-17-41-30.png>
 File: image/2024-06-19-17-44-00.png Graphic file (type bmp)
 <image/2024-06-19-17-44-00.png>
 
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 1251--1253
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1256--1260
+Underfull \hbox (badness 10000) in paragraph at lines 1259--1261
 
  []
 
 
 
 [27]
+Underfull \hbox (badness 10000) in paragraph at lines 1264--1268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1286--1288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1289--1294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1295--1297
+
+ []
+
+
 
 [28]
+Underfull \hbox (badness 10000) in paragraph at lines 1298--1300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1310--1314
+
+ []
+
+
 
 [29] (./target.aux)
  ***********
@@ -588,10 +622,10 @@ L3 programming layer <2022/08/05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9890 strings out of 474256
- 251637 string characters out of 5746292
- 2042560 words of memory out of 5000000
- 32399 multiletter control sequences out of 15000+600000
+ 9900 strings out of 474256
+ 251959 string characters out of 5746292
+ 2068560 words of memory out of 5000000
+ 32408 multiletter control sequences out of 15000+600000
  563693 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,6n,111p,362b,1807s stack positions out of 10000i,1000n,20000p,200000b,200000s

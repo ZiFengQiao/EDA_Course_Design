@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  16 JUN 2024 22:52
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  29 JUN 2024 20:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -432,6 +432,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--80
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+File: image/2024-06-28-15-30-37.png Graphic file (type bmp)
+<image/2024-06-28-15-30-37.png>
+
+
+[1]
+
 Package fontspec Info: 
 (fontspec)             Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -458,10 +478,8 @@ Package fontspec Info:
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 95.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 107.
 
-
-[1]
 
 [2]
 
@@ -478,45 +496,47 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
 [8]
 File: image/2024-06-16-19-26-59.png Graphic file (type bmp)
 <image/2024-06-16-19-26-59.png>
+
+
+[9]
 File: image/2024-06-16-20-44-36.png Graphic file (type bmp)
 <image/2024-06-16-20-44-36.png>
 File: image/2024-06-16-22-06-07.png Graphic file (type bmp)
 <image/2024-06-16-22-06-07.png>
-
-
-[9]
 File: image/2024-06-16-20-19-02.png Graphic file (type bmp)
 <image/2024-06-16-20-19-02.png>
-File: image/2024-06-16-21-42-54.png Graphic file (type bmp)
-<image/2024-06-16-21-42-54.png>
 
 
 [10]
+File: image/2024-06-16-21-42-54.png Graphic file (type bmp)
+<image/2024-06-16-21-42-54.png>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.53937> on input line 516.
+(Font)              <10.53937> on input line 528.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 516.
+(Font)              <7> on input line 528.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 516.
+(Font)              <5> on input line 528.
 File: image/2024-06-16-22-29-35.png Graphic file (type bmp)
 <image/2024-06-16-22-29-35.png>
 
 
 [11]
 
-[12] (./target.aux)
+[12]
+
+[13] (./target.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9714 strings out of 474256
- 244678 string characters out of 5746292
- 2061560 words of memory out of 5000000
- 32230 multiletter control sequences out of 15000+600000
+ 9724 strings out of 474256
+ 245000 string characters out of 5746292
+ 2042560 words of memory out of 5000000
+ 32239 multiletter control sequences out of 15000+600000
  563701 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,6n,111p,362b,1803s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,6n,111p,362b,1626s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on target.pdf (13 pages).
+Output written on target.pdf (14 pages).

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  26 JUN 2024 09:15
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  29 JUN 2024 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -427,6 +427,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 ]
+File: image/2024-06-28-18-09-11.png Graphic file (type bmp)
+<image/2024-06-28-18-09-11.png>
+
+
+[1]
 
 Package fontspec Info: 
 (fontspec)             Could not resolve font "FangSong/BI" (it probably
@@ -454,10 +459,8 @@ Package fontspec Info:
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 95.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 102.
 
-
-[1]
 
 [2]
 
@@ -500,36 +503,75 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
 [21]
 
 [22]
+
+[23]
 File: image/2024-06-24-16-50-03.png Graphic file (type bmp)
 <image/2024-06-24-16-50-03.png>
 
+Underfull \hbox (badness 10000) in paragraph at lines 1254--1256
 
-[23]
+ []
+
+
+
+[24]
 File: image/2024-06-24-21-06-19.png Graphic file (type bmp)
 <image/2024-06-24-21-06-19.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1265
+
+ []
+
 File: image/2024-06-25-22-48-35.png Graphic file (type bmp)
 <image/2024-06-25-22-48-35.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1272--1274
+
+ []
+
 File: image/2024-06-25-21-26-28.png Graphic file (type bmp)
 <image/2024-06-25-21-26-28.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1281--1282
+
+ []
+
 File: image/2024-06-25-21-56-47.png Graphic file (type bmp)
 <image/2024-06-25-21-56-47.png>
 
 
-[24]
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 1289--1290
+
+ []
+
 File: image/2024-06-25-22-07-02.png Graphic file (type bmp)
 <image/2024-06-25-22-07-02.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1298
+
+ []
+
 File: image/2024-06-25-22-13-26.png Graphic file (type bmp)
 <image/2024-06-25-22-13-26.png>
 File: image/2024-06-25-22-16-52.png Graphic file (type bmp)
 <image/2024-06-25-22-16-52.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1305--1311
+
+ []
+
+
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1312--1315
+
+ []
+
 File: image/2024-06-24-21-42-35.png Graphic file (type bmp)
 <image/2024-06-24-21-42-35.png>
 
-
-[25]
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1313
+Underfull \hbox (badness 10000) in paragraph at lines 1327--1329
 
  []
 
@@ -537,52 +579,80 @@ File: image/2024-06-26-08-54-42.png Graphic file (type bmp)
 <image/2024-06-26-08-54-42.png>
 File: image/2024-06-26-08-54-17.png Graphic file (type bmp)
 <image/2024-06-26-08-54-17.png>
+
+
+[27]
 File: image/2024-06-26-09-04-34.png Graphic file (type bmp)
 <image/2024-06-26-09-04-34.png>
 File: image/2024-06-26-09-05-12.png Graphic file (type bmp)
 <image/2024-06-26-09-05-12.png>
 File: image/2024-06-26-09-05-49.png Graphic file (type bmp)
 <image/2024-06-26-09-05-49.png>
-
-
-[27]
 File: image/2024-06-26-09-09-13.png Graphic file (type bmp)
 <image/2024-06-26-09-09-13.png>
 File: image/2024-06-26-09-09-39.png Graphic file (type bmp)
 <image/2024-06-26-09-09-39.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1356--1374
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1386
 
  []
 
-File: image/2024-06-24-19-51-58.png Graphic file (type bmp)
-<image/2024-06-24-19-51-58.png>
-File: image/2024-06-24-22-21-16.png Graphic file (type bmp)
-<image/2024-06-24-22-21-16.png>
 
 
 [28]
+File: image/2024-06-24-19-51-58.png Graphic file (type bmp)
+<image/2024-06-24-19-51-58.png>
 
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 1408--1416
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1402
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1403--1405
+
+ []
+
+File: image/2024-06-24-22-21-16.png Graphic file (type bmp)
+<image/2024-06-24-22-21-16.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1415--1418
 
  []
 
 
 
-[30] (./target.aux)
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 1426--1428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1429--1432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1436
+
+ []
+
+
+
+[30]
+
+[31] (./target.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9946 strings out of 474256
- 252521 string characters out of 5746292
- 2047560 words of memory out of 5000000
- 32454 multiletter control sequences out of 15000+600000
+ 9954 strings out of 474256
+ 252799 string characters out of 5746292
+ 2062560 words of memory out of 5000000
+ 32461 multiletter control sequences out of 15000+600000
  562769 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,6n,111p,362b,1803s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on target.pdf (31 pages).
+Output written on target.pdf (32 pages).

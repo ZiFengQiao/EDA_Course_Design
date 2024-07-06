@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  16 JUN 2024 11:15
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  29 JUN 2024 20:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -444,11 +444,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--114
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
+
+ []
+
+
 
 [1]
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+File: image/2024-06-28-15-19-27.png Graphic file (type bmp)
+<image/2024-06-28-15-19-27.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+
+ []
+
+
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
@@ -479,33 +496,33 @@ Package fontspec Info:
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7.52812> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 158.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 169.
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
  []
 
@@ -516,7 +533,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--260
 [6]
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
 
@@ -528,71 +545,70 @@ File: image/2024-06-15-22-16-36.png Graphic file (type bmp)
 
 
 [9]
-File: image/2024-06-14-20-08-22.png Graphic file (type bmp)
-<image/2024-06-14-20-08-22.png>
-
 
 [10]
+File: image/2024-06-14-20-08-22.png Graphic file (type bmp)
+<image/2024-06-14-20-08-22.png>
 File: image/2024-06-15-20-28-49.png Graphic file (type bmp)
 <image/2024-06-15-20-28-49.png>
 
-Overfull \hbox (35.00925pt too wide) in paragraph at lines 511--518
-[]\TU/SimSun(0)/m/n/10.53937 一 位 数 值 比 较 器 的 行 为 仿 真 结 果 如 图 \TU/lmr/m/n/10.53937 2[]\TU/SimSun(0)/m/n/10.53937 所 示。|  根 据 仿 真 波 形 图 可 以 看 到 比 较 结 果 完 全 正 确\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 当 \TU/lmr/m/n/10.53937 a=1’b1,b=1’b0
+Overfull \hbox (35.00925pt too wide) in paragraph at lines 522--529
+[]\TU/SimSun(0)/m/n/10.53937 一 位 数 值 比 较 器 的 行 为 仿 真 结 果 如 图 \TU/lmr/m/n/10.53937 3[]\TU/SimSun(0)/m/n/10.53937 所 示。|  根 据 仿 真 波 形 图 可 以 看 到 比 较 结 果 完 全 正 确\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 当 \TU/lmr/m/n/10.53937 a=1’b1,b=1’b0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--518
+Underfull \hbox (badness 10000) in paragraph at lines 522--529
 
  []
 
 File: image/2024-06-15-21-15-24.png Graphic file (type bmp)
 <image/2024-06-15-21-15-24.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 
  []
 
-
-
-[11]
 File: image/2024-06-15-22-19-35.png Graphic file (type bmp)
 <image/2024-06-15-22-19-35.png>
 File: image/2024-06-14-22-19-02.png Graphic file (type bmp)
 <image/2024-06-14-22-19-02.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--551
-
- []
-
-File: image/2024-06-15-20-44-19.png Graphic file (type bmp)
-<image/2024-06-15-20-44-19.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--559
+Underfull \hbox (badness 10000) in paragraph at lines 555--562
 
  []
 
 
 
 [12]
-File: image/2024-06-15-21-44-16.png Graphic file (type bmp)
-<image/2024-06-15-21-44-16.png>
-File: image/2024-06-15-22-30-05.png Graphic file (type bmp)
-<image/2024-06-15-22-30-05.png>
+File: image/2024-06-15-20-44-19.png Graphic file (type bmp)
+<image/2024-06-15-20-44-19.png>
 
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 587--593
+Underfull \hbox (badness 10000) in paragraph at lines 563--570
 
  []
 
+File: image/2024-06-15-21-44-16.png Graphic file (type bmp)
+<image/2024-06-15-21-44-16.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 595--598
+
+[13]
+File: image/2024-06-15-22-30-05.png Graphic file (type bmp)
+<image/2024-06-15-22-30-05.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--604
 
  []
 
 
 
 [14]
+Underfull \hbox (badness 10000) in paragraph at lines 606--611
+
+ []
+
+
 
 [15] (./target.aux)
  ***********
@@ -601,12 +617,12 @@ L3 programming layer <2022/08/05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9704 strings out of 474256
- 246246 string characters out of 5746292
- 2030560 words of memory out of 5000000
- 32217 multiletter control sequences out of 15000+600000
+ 9714 strings out of 474256
+ 246568 string characters out of 5746292
+ 2010560 words of memory out of 5000000
+ 32226 multiletter control sequences out of 15000+600000
  563701 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,111p,362b,1626s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,10n,111p,362b,1628s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on target.pdf (16 pages).

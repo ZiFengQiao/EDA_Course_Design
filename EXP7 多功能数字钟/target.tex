@@ -82,7 +82,14 @@
 秒时)，发一次高音(1024 HZ)“哒”信号(信号持续时间半秒)。
 \subsection*{拓展任务}
 \textbf{任务要求}:在提高任务基础上添加闹钟功能。按下设置闹钟方式键，使系统工作于预置状态，此时显示器与时钟脱开，而与预置计数器相连，利用前面手动校时、校分方式进行预置，预置后回到正常计时模式。当计时计到预置的时间时，蜂鸣器发出闹钟信号，时间为一分钟，闹铃信号
-可以用开关键 CLOSE“止闹”，正常情况下此开关键释放。
+可以用开关键 CLOSE“止闹”，正常情况下此开关键释放。\\
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image/2024-06-28-18-09-11.png}
+    \caption{多功能数字钟系统的模块框图}
+    \label{image_principle_1}
+\end{figure}
+最终设计得到支持时间加或减、报时和闹钟的数字钟的系统模块框图如图\ref{image_principle_1}所示。
 % 第二部分
 \section*{\fourhao 二、设计过程}
 \xiaosihao
@@ -1244,57 +1251,66 @@ endmodule
     \caption{校准仿真}
     \label{image_base_sim_1}
 \end{figure}
-基础任务的计数功能工作正确, 复位按键可以实现秒计数的复位, 仿真图\ref{image_base_sim_1}中主要展示了通过按键的形式完成分和时的校准, 可以看到在进入时校准的状态下, 一个inc的上升沿信号可以使得时计数器增加。
+基础任务的计数功能工作正确, 复位按键可以实现秒计数的复位, 仿真图\ref{image_base_sim_1}中主要展示了通过按键
+的形式完成分和时的校准, 可以看到在进入时校准的状态下, 一个inc的上升沿信号可以使得时计数器增加。\\
+\newpage
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{image/2024-06-24-21-06-19.png}
     \caption{按键消抖仿真}
     \label{image_base_sim_2}
 \end{figure}
-按键消抖模块工作正常, 仿真图\ref{image_base_sim_2}可以看到按键消抖正常工作, 同时利用按键时钟将异步的信号转化为同步信号进行模块间传输。
+按键消抖模块工作正常, 仿真图\ref{image_base_sim_2}可以看到按键消抖正常工作, 同时利用按键时钟
+将异步的信号转化为同步信号进行模块间传输。\\
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-25-22-48-35.png}
     \caption{报时模块仿真}
     \label{image_tellTime_sim_1}
 \end{figure}
-报时模块的仿真结果如图\ref{image_tellTime_sim_1}所示, 当进入整点前的十秒钟时, 系统每两秒输出512Hz信号半秒, 用于控制蜂鸣器输出报时信号, 最后进入整点时同样输出半秒信号, 将输出切换至1024Hz。
+报时模块的仿真结果如图\ref{image_tellTime_sim_1}所示, 当进入整点前的十秒钟时, 系统每两秒输出512Hz信号半秒
+, 用于控制蜂鸣器输出报时信号, 最后进入整点时同样输出半秒信号, 将输出切换至1024Hz。\\
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-25-21-26-28.png}
     \caption{modelsim仿真结果}
     \label{image_tellTime_sim_2}
 \end{figure}
-通过modesim仿真结果如图\ref{image_tellTime_sim_2}, 可以更加清晰地看到不同的数据的详细信息。
+通过modesim仿真结果如图\ref{image_tellTime_sim_2}, 可以更加清晰地看到不同的数据的详细信息。\\
 \subsection*{拓展任务}
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{image/2024-06-25-21-56-47.png}
+    \includegraphics[width=0.6\textwidth]{image/2024-06-25-21-56-47.png}
     \caption{设置闹钟仿真}
     \label{image_alarm_sim_1}
 \end{figure}
-设置闹钟功能的仿真如图\ref{image_alarm_sim_1}所示, 通过增加按键, 成功使得预置计数器增加一;
+设置闹钟功能的仿真如图\ref{image_alarm_sim_1}所示, 通过增加按键, 成功使得预置计数器增加一;\\
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-25-22-07-02.png}
     \caption{闹钟生效仿真}
     \label{image_alarm_sim_2}
 \end{figure}
-闹钟生效时的仿真结果如图\ref{image_alarm_sim_2}所示, 当设置结果同当前时间一致时蜂鸣器发声。
+闹钟生效时的仿真结果如图\ref{image_alarm_sim_2}所示, 当设置结果同当前时间一致时蜂鸣器发声。\\
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-25-22-13-26.png}
     \caption{闹钟设置期间的显示仿真}
     \label{image_alarm_sim_3}
 \end{figure}
-闹钟设置期间的显示仿真如图\ref{image_alarm_sim_3}所示, 当进入闹钟设置模式时, 显示结果为预置计数器。
-\begin{figure}[htbp]
+闹钟设置期间的显示仿真如图\ref{image_alarm_sim_3}所示, 当进入闹钟设置模式时, 显示结果为预置计数器。\\
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-25-22-16-52.png}
     \caption{闹钟停止按键的仿真}
     \label{image_alarm_sim_4}
 \end{figure}
-闹钟停止按键的仿真结果如图\ref{image_alarm_sim_4}所示, 当按下停止闹钟按键后, 大概有30ms左右的延迟完成闹钟关闭, 否则该闹钟会持续一分钟。
+闹钟停止按键的仿真结果如图\ref{image_alarm_sim_4}所示, 当按下停止闹钟按键后, 大概有30ms左右的延迟完
+成闹钟关闭, 否则该闹钟会持续一分钟。\\
 % 第四部分
 \section*{\fourhao 四、硬件验证结果}
 \xiaosihao
@@ -1309,7 +1325,7 @@ endmodule
     \label{image_verify_1}
 \end{figure}
 基础部分的三个功能验证结果如图\ref{image_verify_1}所示, 通过校时模式, 完成了分和时的校准并与现有手表进行对比, 
-保证时间精确性, 通过复位按键复位秒计时器, 实现时间校准, 完成基础任务要求\\
+保证时间精确性, 通过复位按键复位秒计时器, 实现时间校准, 完成基础任务要求。\\
 \subsection*{提高任务}
 \begin{figure}[H]
     \begin{minipage}[t]{0.45\linewidth}
@@ -1350,12 +1366,10 @@ LED灯LD2\_0上, 图\ref{image_verify_2}展示的是从22:59:50开始, 每隔两
         \caption{设置闹钟结果}
         \label{image_alarm_verify_1_3}
     \end{minipage}
-    \caption{闹钟设置过程}
-    \label{image_alarm_verify_1}
 \end{figure}
-设置闹钟的过程如图\ref{image_alarm_verify_1}所示, 其中图\ref{image_alarm_verify_1_1}展示了默认状态下的时钟情况,
-\ref{image_alarm_verify_1_2}是进入了闹钟设置状态, 可见其预置计数器内容与时钟不一致, 通过设置改变预置计数器内容, 
-设置闹钟结果如图\ref{image_alarm_verify_1_3}所示。\\
+设置闹钟的过程如图\ref{image_alarm_verify_1_1}、图\ref{image_alarm_verify_1_2}和图\ref{image_alarm_verify_1_3}所示, 
+其中图\ref{image_alarm_verify_1_1}展示了默认状态下的时钟情况,\ref{image_alarm_verify_1_2}是进入了闹钟设置状态, 可见其
+预置计数器内容与时钟不一致, 通过设置改变预置计数器内容, 设置闹钟结果如图\ref{image_alarm_verify_1_3}所示。\\
 \begin{figure}[H]
     \begin{minipage}[t]{0.45\linewidth}
         \centering
@@ -1369,10 +1383,8 @@ LED灯LD2\_0上, 图\ref{image_verify_2}展示的是从22:59:50开始, 每隔两
         \caption{通过按键关闭闹钟}
         \label{image_alarm_verify_2_2}
     \end{minipage}
-    \caption{闹钟触发过程}
-    \label{image_alarm_verify_2}
 \end{figure}
-闹钟触发的过程如图\ref{image_alarm_verify_2}所示, 当时间到达如图\ref{image_alarm_verify_1}所示设置的22:40分闹钟时,
+闹钟触发的过程如图\ref{image_alarm_verify_2_1}和图\ref{image_alarm_verify_2_2}所示, 当时间到达如图\ref{image_alarm_verify_1_3}所示设置的22:40分闹钟时,
 led灯被点亮, 输出1024Hz的信号驱动蜂鸣器, 如果不按下关闭闹钟按键的话, 该闹钟将持续1分钟, 如图\ref{image_alarm_verify_2_2}
 所示为提前按下关闭按键, 闹钟被关闭, LED灯熄灭。 
 % 第五部分
@@ -1382,15 +1394,17 @@ led灯被点亮, 输出1024Hz的信号驱动蜂鸣器, 如果不按下关闭闹�
 % 设计过程中遇到的问题及解决的方法。
 \subsection*{无法实现always语句块的异步赋值}
 解决: 在使用计数器完成校时功能时, 虽然仿真和代码无误, 但硬件验证结果并不理想, 按键无效。\\
-通过检查综合过程中生成的原理图发现问题, 原理图如下:
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{image/2024-06-24-19-51-58.png}
     \caption{发现问题的原理图}
     \label{image_QA_1}
 \end{figure}
-如图\ref{image_QA_1}所示, 对触发器进行赋值时, 虽然敏感列表写了inc和dec, 但其并未被综合到触发器的触发端, 但其相应的组合逻辑功能有被正确的综合, 在进行仿真的过程中, 并不会进行任何优化, 所以不会发生错误。\\
-问题出在如何让定时器能够有效的接收异步的按键信号, 并进行加或者减法, 因此, 通过引入按键的消抖状态机解决问题, 同时为按键信号引入伴随时钟, 实现按键信号的同步传输。
+综合结果如图\ref{image_QA_1}所示, 对触发器进行赋值时, 虽然敏感列表写了inc和dec信号, 但其并未被综合到触发器的触发端, 
+但其相应的组合逻辑功能有被正确的综合, 在进行仿真的过程中, 并不会进行任何优化, 所以不会发生错误。\\
+
+问题出在如何让定时器能够有效的接收异步的按键信号, 并进行加或者减法, 因此, 通过引入按键的消抖状态机解决问题, 
+同时为按键信号引入伴随时钟, 实现按键信号和计数器模块间的同步传输。
 \subsection*{已添加消抖模块, 但设计得到的数字钟按键会突然使数据增加数次}
 \begin{figure}[htbp]
     \centering
@@ -1398,18 +1412,24 @@ led灯被点亮, 输出1024Hz的信号驱动蜂鸣器, 如果不按下关闭闹�
     \caption{错误综合结果}
     \label{image_QA_2}
 \end{figure}
-检查综合结果发现问题, 见图\ref{image_QA_2}, 本来应该是组合逻辑的状态转移求解次态的电路中综合出了latch, 导致消抖模块的状态混乱, 频繁输出按键有效信号, 导致了按键抖动现象。\\
-直接通过右键latch, 可以直接查看对应的综合代码, 发现是求解次态电路中误删了次态默认等于当前状态, 导致if-else语句结构不完整, 综合产生LATCH, 修改后解决问题。
+消抖模块经过验证无误, 认为问题并不出在消抖上, 检查综合结果发现问题, 见图\ref{image_QA_2}, 本来应
+该是组合逻辑的状态转移求解次态的电路中综合出了latch, 导致消抖模块的状态混乱, 频繁输出按键有效信号, 
+导致了按键抖动现象。\\
+
+直接通过右键latch, 可以直接查看对应的综合代码, 发现是求解次态电路中
+误删了次态默认等于当前状态, 导致if-else语句结构不完整, 综合产生LATCH, 修改后解决问题。
 \subsection*{时钟寄存器无复位要求难以仿真}
 由于时钟寄存器要求无复位, 其初值无法指定, 就算可以复位, 也无法很方便的设定任意初值用于仿真, 通过查阅资料得知, 可以在模块内通过写无法综合的语句辅助进行仿真, 如initial语句块等, 在进行仿真时可以有效的方便仿真。
 % 第六部分
-\section*{\fourhao 六、写出心得体会}
+\section*{\fourhao 六、心得体会}
 \xiaosihao
 首次独立完成较为复杂的项目, 花费众多时间进行设计和仿真, 尤其是仿真阶段耗费大量时间来使得设计结果科学合理, 
-能够证明设计无误, 期间为了能够尽快完成s级的仿真初步接触了modelsim仿真工具, 在本次实验中进一步提高了对仿真工具的运用\\
+能够证明设计无误, 期间为了能够尽快完成秒级的仿真初步接触了modelsim仿真工具, 在本次实验中进一步提高了对仿真工具的运用能力。\\
+
 第一次在一个设计中使用如此多的时钟, 体会到复杂系统, 如arm内核的MCU中时钟树设计的意义, 能够在最大程度上提高
-时钟资源的利用率的同时, 还能保证不同模块见的同步运行, 在日后再次进行复杂设计时可以借鉴此思路, 在设计前首先构建模块框图, 
+时钟资源的利用率的同时, 还能保证不同模块间的同步运行, 在日后再次进行复杂设计时可以借鉴此思路, 在设计前首先构建模块框图, 
 使尽量多的模块能够同步工作, 减小异步模块间的联系, 简化系统。\\
+
 通过6次实验设计的锻炼, 逐渐熟练对综合工具的应用, 出现问题后可以迅速定位, 并进一步的在设计时避免综合工具的问题, 本次
 实验中在基础部分还会花一定的时间用在解决综合工具问题上, 但是在提高和拓展部分在设计时有意识地避免综合问题, 将大部分时间花在仿真上, 
 仿真无误后进行烧录一次成功。\\

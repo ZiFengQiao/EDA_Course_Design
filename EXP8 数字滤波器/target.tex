@@ -47,21 +47,28 @@
     \Huge
     \textbf{课程名称：EDA 技术综合设计}
 
-    \vspace{2cm}
+    \vspace{3cm}
 
     \LARGE
-    设计报告名称：设计八\ 数字滤波器
+    实验名称: 实验八\ 创新设计\\
+    基于串口的数字滤波器设计和硬件验证平台
 
-    \vspace{4cm}
+    \vspace{5cm}
 
     \centering
+    \section*{团队成员}
     \Large
-    \begin{tabular}{rl}
-        班级： & 通信214    \\
-        姓名： & \ 王峤宇    \\
-        学号： & \ 214022
+    \begin{tabular}{| l | l | l |}
+        \hline
+        \textbf{姓名} & \textbf{班级} & \textbf{学号} \\ 
+        \hline
+        王峤宇 & 通信214 & 214022 \\ 
+        \hline
+        朱书硕 & 通信214 & 214026 \\ 
+        \hline
+        王占同 & 通信214 & 214010 \\ 
+        \hline
     \end{tabular}
-
     \vfill
 
     \vspace{1cm}
@@ -75,16 +82,82 @@
 % 设计项目内容及设计原理，如真值表、状态表及状态转换图、文字说明等。
 数字滤波器从实现结构上划分，有FIR和IIR两种。FIR (Finite Impulse Response)滤波器的特点是它的冲击响应是有限的，它跟过去的信号无关，所以在使用时容易实现，速度快。本次任务为设计一
 个 FIR 滤波器。
+\subsection*{FIR滤波器原理}
+FIR滤波器简单来说, 其本质上就是加权有限数量输入信号的过去值, 来计算当前的输出, 
+比如针对按键的消抖, 采样多次值, 由过去判断当前输出, 本质上就是一种滤波器, 但是按键消抖是一种中值滤波器。\\
+FIR的基本原理由如下公式给出:
+\begin{equation}
+    y[n] = \sum_{k=0}^{N-1} h[k] \cdot x[n-k]
+\end{equation}
+其中, 
+\begin{itemize}
+    \item $y[n]$ 是输出信号。
+    \item $x[n]$ 是输入信号。
+    \item $h[k]$ 是滤波器的脉冲响应系数。
+    \item $N$ 是滤波器的长度（系数的数量）。
+\end{itemize}
+
+线性相位FIR滤波器的关键在于其脉冲响应 $h[k]$ 的对称性。这种对称性可以保证滤波器具有线性相位特性。
+根据对称性的不同，可以将线性相位FIR滤波器分为以下两种类型：
+\begin{enumerate}
+    \item 偶对称FIR滤波器, 第一类线性相位
+    \begin{equation}
+    h[k] = h[N-1-k]
+    \end{equation}
+    
+    \item 奇对称FIR滤波器, 第二类线性相位
+    \begin{equation}
+    h[k] = -h[N-1-k]
+    \end{equation}
+\end{enumerate}
+实际应用中, 通常采用第一类线性相位, 便于运算的同时, 其相位特性也是严格不失真的。
+\subsection*{线性相位FIR滤波器结构}
+FIR的设计通常借助其对称的特性简化设计, 由于对称性的存在，可以减少乘法运算的数量。
+例如，对于一个长度为 $N$ 的对称FIR滤波器，只需要将输入数据相加, 采用$\frac{N}{2}$的乘法器, 将其与FIR系数相乘再相加就可以。
+\subsection*{串行和并行设计思路}
+\subsubsection*{并行设计}
+在FPGA设计中，为了提高计算效率，通常会采用并行和流水线结构。通过并行处理多个乘法和加法操作，可以加快滤波器的处理速度。
+同时，通过流水线技术，可以将计算过程分解为多个阶段，每个阶段独立完成部分计算，从而提高整体计算效率。\\
+\subsubsection*{串行设计}
+在FPGA中实现FIR滤波器时，可以采用串行设计方法。这种方法的主要特点是每个时钟周期只处理一个输入数据，
+通过多个时钟周期完成整个FIR滤波器的计算。串行设计的主要优点是硬件资源需求较少，但处理速度较慢。
+串行FIR滤波器的基本结构如下：
+\begin{itemize}
+    \item \textbf{移位寄存器}：用于存储输入信号的过去值。每个时钟周期，新的输入样本被移入寄存器，而最旧的样本被移出。
+    \item \textbf{乘法器}：用于将输入样本与滤波器系数相乘。由于是串行结构，通常只有一个乘法器，每个时钟周期进行一次乘法运算。
+    \item \textbf{累加器}：用于累加乘法器的输出。累加器的结果在每个时钟周期更新，直到所有系数都计算完毕，得到最终的滤波器输出。
+\end{itemize}
 \subsection*{基础任务}
 \textbf{设计任务}:利用板卡资源，设计一个8阶的FIR低通滤波器,采样频率是5KHz,阻带截止频率是 1KHz.具体频率可以板卡实际资源为
 参照进行调整。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-11-13-34.png}
+    \caption{8阶并行FIR滤波器的模块框图}
+    \label{image_principle_base_1}
+\end{figure}
+基于并行结构设计的FIR的8阶数字滤波器模块框图如图\ref{image_principle_base_1}所示。
 \subsection*{提高内容}
 \textbf{设计任务}:在基础任务的基础上，设置任意阶 FIR 滤波器，要求采用模块化设计思想设计。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-11-13-08.png}
+    \caption{15阶并行FIR滤波器模块框图}
+    \label{image_principle_improve_1}
+\end{figure}
+15阶并行FIR滤波器的模块框图如图\ref{image_principle_improve_1}所示。
 \subsection*{拓展任务}
 \textbf{任务要求}:滤波器的架构方法可采用串行、并行等不同方法来实现，采用不同方法设计实现FIR滤波器。
-\subsection*{创新任务}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-11-11-33.png}
+    \caption{15阶串行FIR滤波器模块框图}
+    \label{image_principle_extend_1}
+\end{figure}
+基于串行结构设计的15阶FIR滤波器的模块框图如图\ref{image_principle_extend_1}所示。
+\subsection*{创新设计}
 \textbf{设计思路}:不满足仅仅在仿真中实现的FIR滤波器, 将搭建的FIR滤波器综合并部署到FPGA开发板上, 
-利用串口与FPGA通信, PC机为FPGA传输待滤波数据, FPGA将滤波输出结果回传到FPGA上,PC通过MATLAB或其
+利用串口与FPGA通信, PC机向FPGA传输待滤波数据, FPGA将滤波输出结果回传到FPGA上,PC通过MATLAB或其
 他语言对数据进行验证。\\
 
 \textbf{十六倍过采样原理}:标准UART的RXD前端有一个"1到0跳变检测器",当其连续接受到8个RXD上的地电平时,
@@ -102,7 +175,15 @@
     \label{image_design_innovation_1}
 \end{figure}
 十六倍过采样的示意图如图\ref{image_design_innovation_1}所示。
-% 该部分的模块框图如图\ref{image_design_innovation_2}所示, 主要由并行的FIR和串口模块以及相应的控制电路构成。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{image/2024-06-29-22-29-18.png}
+    \caption{创新设计的模块框图}
+    \label{image_design_innovation_2}
+\end{figure}
+该部分的模块框图如图\ref{image_design_innovation_2}所示, 主要由待验证FIR和串口模块以及相应的控制电路构成, 
+上位机部分通过Matlab程序完成串口通信, 直接利用FPGA进行滤波然后检验数据正确性。
 
 % 第二部分
 \section*{\fourhao 二、设计过程}
@@ -164,7 +245,6 @@ module fir_parallel (
 
     //(2) 首尾相加, 实现线性相位结构, 延迟两个时钟
     wire signed [12:0] add_reg[MULT_NUM-1:0];
-    assign add_reg[MULT_NUM-1] = {xin_reg[MULT_NUM-1][11], xin_reg[MULT_NUM-1]};
     genvar l;
     generate
         for (l = 0; l < DATA_NUM/2; l = l+1) begin
@@ -176,6 +256,20 @@ module fir_parallel (
             );
         end
     endgenerate
+
+    /* 人为延迟两个周期 */
+    reg signed [12:0] add_reg_r[1:0];
+    assign add_reg[MULT_NUM-1] = add_reg_r[1];
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            add_reg_r[0] <= 'b0;
+            add_reg_r[1] <= 'b0;
+        end
+        else if(en_r[3]) begin
+            add_reg_r[0] <= {xin_reg[MULT_NUM-1][11], xin_reg[MULT_NUM-1]};
+            add_reg_r[1] <= add_reg_r[0];
+        end
+    end
 
     // (3) 乘法器, 延迟3个时钟
     wire signed [24:0] mout[MULT_NUM-1:0];
@@ -243,7 +337,7 @@ title('原信号');
 \end{lstlisting}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{image/2024-06-26-15-39-31.png}
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-21-37-14.png}
     \caption{滤波器设计}
     \label{image_design_base_1}
 \end{figure}
@@ -1311,17 +1405,17 @@ set_property -dict {PACKAGE_PIN T4 IOSTANDARD LVCMOS33} [get_ports txd]
 \subsection*{基础任务}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{image/2024-06-26-16-30-54.png}
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-21-15-02.png}
     \caption{数据流过程仿真}
     \label{image_base_sim_1}
 \end{figure}
 针对输入数据计算流程的仿真结果如图\ref{image_base_sim_1}所示, 当数据en有效时, 
 开始读入xin数据, 数据读入后看以看到, 其在延迟两个时钟后由加法器输出到对应的
 add\_reg中, 然后数据开始不为0, 乘法器开始工作, 从add\_reg不为0开始, 延迟3时钟后乘法器开始输出, 再延迟一个时钟, 最后得到累加结果。\\
-在发生以上延迟后, 流水线进入填满状态, 每一个时钟输出一个有效数据。 
+此后, 流水线进入填满状态, 每一个时钟输出一个有效数据。 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{image/2024-06-26-16-34-46.png}
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-21-13-57.png}
     \caption{滤波结果仿真}
     \label{image_base_sim_2}
 \end{figure}
@@ -1350,7 +1444,7 @@ x = cos(2*pi*50*t) + 0.5*cos(2*pi*2000*t);
 对输入信号, 即添加单频噪声的音频信号, 其时域图和频域图如图\ref{image_improve_sim_1_2}所示, 
 滤波结果仿真如图\ref{image_improve_sim_1_1}所示, 可以看到滤波结果的时域非常接近原始音频信号, 
 成功将音频信号中添加的单频噪声滤除。
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-26-20-38-56.png}
     \caption{数据流仿真}
@@ -1361,14 +1455,14 @@ x = cos(2*pi*50*t) + 0.5*cos(2*pi*2000*t);
 中的加法器单元, 累加求和延迟6个时钟, 整套计算系统为流水线模式, 经过11个时钟后, 流水线被填满之后, 每个时钟输出
 一个有效数据。
 \subsection*{拓展任务}
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-27-02-14-26.png}
     \caption{仿真效果图}
     \label{image_extend_sim_1}
 \end{figure}
 滤波效果仿真结果如图\ref{image_extend_sim_1}所示, 滤波效果理想, 可以看到加噪信号中的单频噪声被滤除。
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-27-02-15-54.png}
     \caption{时序仿真图}
@@ -1382,7 +1476,7 @@ x = cos(2*pi*50*t) + 0.5*cos(2*pi*2000*t);
 计算结果, 可以看到其计算结果与并行设计的相同系数的FIR数值一样。
 % 第四部分
 \subsection*{创新设计}
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{image/2024-06-27-22-24-29.png}
     \caption{创新设计的仿真结果}
@@ -1398,22 +1492,67 @@ x = cos(2*pi*50*t) + 0.5*cos(2*pi*2000*t);
 % 记录加编程器与拨码开关和发光二极管、数码管等的连接情况。记录开发板硬件验证结果，并分析其结果的正确性。
 % 按照基础任务、提高任务和拓展任务分别分析
 \subsection*{基础任务}
+使用Matlab进行验证的程序如下:
+\begin{lstlisting}[language=Matlab, caption={基础任务Matlab验证结果}]
+clear all; clc; close all;
+fs = 5e3;
+T = 1 / fs;
+n = 0:2047;
+t = n * T;
+x = cos(2*pi*50*t) + 0.5*cos(2*pi*2000*t);
+x = mapminmax(x);
+x_dis = floor((2 ^ 11 - 1) * x);
+
+b = [-137   -40   249   580   726   580   249   -40  -137];
+
+x = x_dis;
+y = round(filter(b, 1, x_dis));
+time = t;
+N = 2048;
+% 读取FPGA滤波结果数据z
+load res.mat
+z = VarName1;
+% 作图
+subplot 611; plot(time,x,'k'); grid;
+title('原始信号'); ylabel('幅值'); xlabel('时间/s');
+
+subplot 612; audioFFT = fft(x);
+plot((0:round(N/2)-1) / N * fs, abs(audioFFT(1:round(N/2)) / N), 'k');grid;
+title('原始信号频谱'); ylabel('幅值'); xlabel('freq(Hz)');
+
+subplot 613; plot(time,y,'k');grid;
+title('Matlab滤波时域'); ylabel('幅值'); xlabel('时间/s');
+
+subplot 614; audioFFT = fft(y);
+plot((0:round(N/2)-1) / N * fs, abs(audioFFT(1:round(N/2)) / N), 'k');grid;
+title('Maltab滤波频域'); ylabel('幅值'); xlabel('freq(Hz)');
+
+subplot 615; plot(time,z,'k'); grid;
+title('FPGA滤波后时域'); ylabel('幅值'); xlabel('时间/s');
+
+subplot 616; audioFFT = fft(z);
+plot((0:round(N/2)-1) / N * fs, abs(audioFFT(1:round(N/2)) / N), 'k');grid;
+title('FPGA滤波后频域'); ylabel('幅值'); xlabel('freq(Hz)');
+\end{lstlisting}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{image/2024-06-27-02-30-22.png}
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-21-18-48.png}
     \caption{8阶并行FIR滤波器滤波结果}
     \label{image_verify_base_1}
 \end{figure}
-通过Matlab计算比对滤波结果, 结果如图\ref{image_verify_base_1}所示, 效果基本实现。
+通过Matlab计算比对滤波结果, 结果如图\ref{image_verify_base_1}所示, FIR低通滤波器的效果基本实现, 
+其中数据略微不同是由于FPGA滤波器将开始滤波时的无效数据输出, 导致了二者微小的差距。
 \subsection*{提高任务}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{image/2024-06-26-21-45-09.png}
+    \includegraphics[width=0.7\textwidth]{image/2024-06-28-18-52-58.png}
     \caption{Matlab验证结果}
     \label{image_verify_improve_1}
 \end{figure}
 通过Matlab将计算结果比对, 结果如图\ref{image_verify_improve_1}所示, 效果很好的实现, 
-但依然能够发现数值略微对不上, 推测为量化噪声引起, 可以看到信号未发生相位失真, 具备FIR特性。
+可以从途中观察到数值有略微差距, 通过分析FPGA仿真输出的数据可以发现问题, 在进行数据输入
+前, 数据输入使能便已经置位, 导致输出数据有一部分前导零, 采样固定点数截止便会导致会丢失
+末尾几个滤波结果, 导致了滤波结果的细微差异。
 \subsection*{拓展任务}
 15阶滤波器对语音信号的Matlab滤波结果验证程序如下:
 \begin{lstlisting}[language=Matlab, caption={语音信号滤波验证程序}]
@@ -1566,7 +1705,7 @@ IP核设计的FIR滤波器可以在硬件上有效的工作, 不仅仅局限于�
 \subsection*{串行FIR滤波器的设计过程无论如何改动, 结果都不正确}
 解决: 花费很长的时间观察仿真时序图, 起初未考虑到加法器的2周期时延与滤波器系数直接赋值无时延导致的不同步,
 一直认为是累加器的累加过程中BYPASS信号控制不正确, 最后实在无法定位问题, 信号输入开始, 通过笔算的形式手动计
-算FIR结果和流程, 最终将问题定位到滤波器系数提前加法器输出两个周期的问题, 通过缓存移位寄存器人工为滤波器系数
+算FIR结果和流程, 最终将问题定位到滤波器系数提前加法器输出两个周期的问题, 通过缓存移位寄存器人为将滤波器系数
 的赋值延迟2个周期, 解决问题, 最终得到与并行FIR滤波器完全一致的计算结果。
 % 第六部分
 \section*{\fourhao 七、心得体会}
